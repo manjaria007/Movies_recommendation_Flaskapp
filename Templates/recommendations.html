@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if t=='s' %}
+	<h3 class="text-white">Sorry! This movies is not in our database.</h3>
+	<h3 class="text-white">Please check if you spelled it correct.</h3>
+	<h3 class="text-white">Or try with another movie.</h3>
+	
+{% else %}
+	<h2 class="text-light text-center">"{{movie}}"is a great choice.</h1>
+	<h5 class="text-light">Movies you can watch</h3>
+	
+	<ul class="list-group list-group-flush">
+		{% for m in r %}
+			<li class="list-group-item bg-transparent" style="color:#ffa047;font-size:120%><strong>{{m|capitalize}}</strong></li>
+		{% endfor %}
+	</ul>
+{% endif %}
+
+{% endblock %}
